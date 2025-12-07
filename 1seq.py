@@ -8,11 +8,9 @@
 quantity = input("Введите количество элементов: ")
 conclusion = []
 
-# В цикле с числом итераций равному введённому кол-ву, запрашиваем ввод элементов, которые добавляем в список
 for i in range(int(quantity)):
     quantity_count = int(input(f"Введите {i+1} элемент: "))
     conclusion.append(quantity_count)
 
-# Сортируем список и выводим
 conclusion.sort()
 print(conclusion)
