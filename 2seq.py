@@ -7,11 +7,20 @@
 
 sequence = input("Введите элементы списка через запятую: ")
 
-# Введённые элементы преобразуем в список, разбивая через разделитель - ","
-sequence_to_lst = list(sequence.split(sep=","))
+# Сделаем проверку через множество: создадим множество допустимых для ввода символов и проверим, является ли разрешонное множество подмножеством вводимых символов
+allowed = set('0123456789,')
+sequence_set = set(sequence)
 
-# Находим элементы для которых кол-во вхождений равно 1
-unique_items = [item for item in sequence_to_lst if sequence_to_lst.count(item) == 1]
+if  sequence_set.issubset(allowed):
 
-# Вывод результата
-print(unique_items)
+    # Введённые элементы преобразуем в список, разбивая через разделитель - ","
+    sequence_to_lst = list(sequence.split(sep=","))
+
+    # Находим элементы для которых кол-во вхождений равно 1
+    unique_items = [item for item in sequence_to_lst if sequence_to_lst.count(item) == 1]
+
+    # Вывод результата
+    print(unique_items)
+
+else:
+    print("Введён неверный символ!")
